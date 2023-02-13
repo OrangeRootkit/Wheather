@@ -55,7 +55,7 @@ const renderSearch = () => {
 
     button.addEventListener('click', async ()=>{
         let place = location.value;
-        let resp = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${place}&limit=5&appid=${API_key}`)
+        let resp = await fetch (`https://api.openweathermap.org/geo/1.0/direct?q=${place}&limit=5&appid=${API_key}`)
         let arr = await resp.json();
         try {
             let data = arr[0];

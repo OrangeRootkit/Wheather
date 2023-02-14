@@ -63,8 +63,13 @@ const renderSearch = () => {
             let lon = data.lon;
             getWeather(lat, lon);
         } catch (err) {
-        location.value = "Ooops. Something went wrong."
+            main.innerHTML = '';
+            main.innerHTML = 
+            `<p class="location-error">Ooops. Something went wrong.</p>
+            <p class="location-info">Error info</p>
+            <button class="button">Try again</button>`
+            const button = document.querySelector('.button');
+            button.addEventListener('click', ()=>renderSearch());
         }
     })
 }
-
